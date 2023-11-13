@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
     ChartData(2017, 3.6),
     ChartData(2018, 7.43),
   ];
+  
   // Default filter for sorting
   String selectedFilter = 'Rank';
 
@@ -368,7 +369,7 @@ class _HomePageState extends State<HomePage> {
                                       height: screensize.height * 0.01,
                                     ),
                                     Text(
-                                      "\$${cryptoModel?.data?[0].quote?.usd!.price?.round()} USD",
+                                      "\$${cryptoModel?.data?[0].quote?.usd!.price?.toString().substring(0, 8)} USD",
                                       style: GoogleFonts.inter(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -404,7 +405,7 @@ class _HomePageState extends State<HomePage> {
                         Container(
                           
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),),
-                          height: screensize.height/13,
+                          height: screensize.height/15,
                         width: screensize.width*0.8,
                           child: 
                            AspectRatio(
@@ -525,7 +526,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                "${cryptoModel?.data?[upindex].quote?.usd!.price?.round()} USD",
+                                "${cryptoModel?.data?[upindex].quote?.usd!.price?.toString().substring(0, 8)} USD",
                                 style: GoogleFonts.inter(
                                   color: Colors.black
                                       .withOpacity(0.8999999761581421),
